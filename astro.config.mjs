@@ -26,8 +26,8 @@ import { remarkReadingTime } from "./src/plugins/remark-reading-time.mjs";
 
 // https://astro.build/config
 export default defineConfig({
-	//site: 'https://jianqi325.github.io',
-	//base: '/Syki_blog'
+	site: "https://syki-blog.pages.dev",
+	base: "/",
 	trailingSlash: "always",
 	integrations: [
 		tailwind({
