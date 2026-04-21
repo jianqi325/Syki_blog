@@ -1,9 +1,10 @@
-# About
-This is the demo site for [Fuwari](https://github.com/saicaca/fuwari).
+# 关于我
+你好，我是见祈，你也可以叫我Syki，一个努力烤盐的大三学生
 
-::github{repo="saicaca/fuwari"}
+本科三年有些荒废，希望能记录自己慢慢改变的生活
 
-> ### Sources of images used in this site
-> - [Unsplash](https://unsplash.com/)
-> - [星と少女](https://www.pixiv.net/artworks/108916539) by [Stella](https://www.pixiv.net/users/93273965)
-> - [Rabbit - v1.4 Showcase](https://civitai.com/posts/586908) by [Rabbit_YourMajesty](https://civitai.com/user/Rabbit_YourMajesty)
+很高兴能在这里和你产生连接
+
+---
+
+::github{repo="jianqi325/Syki_blog"}

@@ -1,0 +1,41 @@
+---
+import { getCollection } from "astro:content";
+import MainGridLayout from "../layouts/MainGridLayout.astro";
+
+// 获取我们在 config.ts 中定义的 moments 集合
+const moments = await getCollection("moments");
+
+// 按时间倒序排列（最新的在最上面）
+moments.sort((a, b) => b.data.published.valueOf() - a.data.published.valueOf());
+---
+
+<MainGridLayout title="动态 | Syki" description="碎碎念与灵感捕捉">
+    <div class="flex w-full rounded-[var(--radius-large)] overflow-hidden relative min-h-32">
+        <div class="card-base z-10 px-9 py-6 relative w-full">
+            <h1 class="text-3xl font-bold mb-6 text-[var(--primary)]">relics</h1>
+            
+            {moments.length === 0 ? (
+                <div class="flex flex-col items-center justify-center py-10 text-center">
+                    <div class="text-7xl mb-6">📡</div>
+                    <p class="text-[var(--text-color-light)] text-lg">宇宙寂寥，目前还没有捕捉到任何信号。</p>
+                    <p class="text-[var(--text-color-light)] text-sm mt-2 opacity-60">
+                    </p>
+                </div>
+            ) : (
+                <div class="flex flex-col gap-8">
+                    {moments.map((moment) => (
+                        <div class="border-b border-dashed border-[var(--line-color)] pb-6 last:border-b-0">
+                            <div class="text-sm font-mono text-[var(--text-color-light)] mb-3 flex items-center gap-2">
+                                <div class="w-2 h-2 rounded-full bg-[var(--primary)]"></div>
+                                {moment.data.published.toLocaleDateString()}
+                            </div>
+                            <div class="prose dark:prose-invert max-w-none">
+                                {moment.body}
+                            </div>
+                        </div>
+                    ))}
+                </div>
+            )}
+        </div>
+    </div>
+</MainGridLayout>
